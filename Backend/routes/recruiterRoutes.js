@@ -4,10 +4,7 @@ const auth = require("../middleware/auth");
 const roleCheck = require("../middleware/roleCheck");
 const jobController = require("../controllers/jobController");
 
-router.post(
-  "/job",
-  auth,
-  roleCheck("RECRUITER"),
+router.post("/job", auth, roleCheck("RECRUITER"),
   jobController.createJob
 );
 
