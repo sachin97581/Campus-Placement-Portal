@@ -36,15 +36,15 @@ function Login() {
         email: formData.email,
         otp,
       });
-      const userData = response.data.user; // Assuming backend returns user data
-      login(userData);
+      const { user, token } = response.data;
+      login(user, token);
       alert("Login Successful");
       // Redirect based on role
-      if (userData.role === 'student') {
+      if (user.role === 'student') {
         navigate('/student/dashboard');
-      } else if (userData.role === 'recruiter') {
+      } else if (user.role === 'recruiter') {
         navigate('/recruiter/dashboard');
-      } else if (userData.role === 'admin') {
+      } else if (user.role === 'admin') {
         navigate('/admin/dashboard');
       } else {
         navigate('/');

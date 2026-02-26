@@ -1,8 +1,13 @@
 import React from 'react'
+import RecruiterNavbar from "../../components/RecruiterNavbar";
 
 function PostJob() {
   return (
-    <div>PostJob</div>
+    <div>
+      <RecruiterNavbar />
+      <h2>Post a Job</h2>
+      <p>Create a new job posting.</p>
+    </div>
   )
 }
 
