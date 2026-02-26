@@ -117,6 +117,12 @@ exports.verifyLoginOtp = async (req, res) => {
 
   res.json({
     token: generateToken(user),
+    user: {
+      id: user._id,
+      name: user.name,
+      email: user.email,
+      role: user.role
+    },
     message: "Login successful"
   });
 };
